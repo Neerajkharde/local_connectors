@@ -45,6 +45,7 @@ class PGConfig:
     database: str
     user: str
     password: str
+    sslmode: str = "prefer"
 
 
 @dataclass(frozen=True)
@@ -103,6 +104,7 @@ def load_config() -> AppConfig:
         database=os.getenv("PG_DATABASE", "sap_connector"),
         user=os.getenv("PG_USER", "postgres"),
         password=os.getenv("PG_PASSWORD", "postgres"),
+        sslmode=os.getenv("PG_SSLMODE", "prefer"),
     )
 
     return AppConfig(sap=sap, pg=pg)
