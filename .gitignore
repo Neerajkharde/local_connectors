@@ -12,3 +12,5 @@ build/
 .vscode/
 *.log
 diag_output.txt
+node_modules/
+.DS_Store
